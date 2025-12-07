@@ -2,20 +2,18 @@
 "use client";
 
 import React, { useState } from 'react';
-import LandingPage from '../components/LandingPage';
+import LandingPage from '@/components/LandingPage'; // <--- Imports your new file
 import Dashboard from '@/components/Dashboard';
 
 export default function Home() {
-  // State to track if user has clicked "Start"
   const [showApp, setShowApp] = useState(false);
 
   return (
     <main>
       {showApp ? (
-        // If true, show the full Dashboard (the code you just moved)
         <Dashboard />
       ) : (
-        // If false, show the Landing Page
+        // Passes the "Start" click handler to your Landing Page
         <LandingPage onStart={() => setShowApp(true)} />
       )}
     </main>

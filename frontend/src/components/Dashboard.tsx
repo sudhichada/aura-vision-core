@@ -56,6 +56,10 @@ export default function Dashboard() {
                         alt="Room Visualization"
                         className="w-full h-full object-cover transition-opacity duration-500"
                         style={{ opacity: isProcessing ? 0.7 : 1 }}
+                        onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = defaultImage;
+                        }}
                     />
 
                     {/* Overlay for processing state */}

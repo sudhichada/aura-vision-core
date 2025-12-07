@@ -12,7 +12,7 @@ export default function LandingPage({ onStart }: { onStart: () => void }) {
             <div className="relative h-[65vh] w-full bg-gray-900 overflow-hidden">
                 {/* Background Image Placeholder - Replace 'src' with your actual image later */}
                 <img
-                    src="/api/placeholder/1200/800"
+                    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=2000&auto=format&fit=crop"
                     alt="Modern Living Room"
                     className="absolute inset-0 w-full h-full object-cover opacity-60"
                 />
@@ -40,12 +40,13 @@ export default function LandingPage({ onStart }: { onStart: () => void }) {
                     </motion.p>
 
                     <motion.button
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(255,255,255,0.4)" }}
                         whileTap={{ scale: 0.95 }}
                         onClick={onStart}
-                        className="bg-black text-white border border-gray-700 px-10 py-4 rounded-lg text-lg font-medium shadow-2xl hover:bg-gray-900 transition-all"
+                        className="group relative px-10 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-lg font-semibold text-white tracking-wide shadow-2xl overflow-hidden transition-all hover:bg-white/20 hover:border-white/40"
                     >
-                        Start Visualizing
+                        <span className="relative z-10">Start Visualizing</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
                     </motion.button>
                 </div>
             </div>
